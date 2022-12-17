@@ -1,0 +1,10 @@
+{
+    "name": "course-demo",
+    "scripts": {
+        "dev": "node server-test.js"
+    },
+    "private": true,
+    "devDependencies": {
+        "mime-types": "^2.1.34"
+    }
+}
