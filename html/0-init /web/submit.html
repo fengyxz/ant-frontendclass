@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <nav>
+    <nav style="background:#1677FF;">
         <a href="https://campus.antfin.com" target="_blank">
-            <img src="./imgs/logo.png"/>
+            <img src="./imgs/logo.png" alt="logo" width="100" />
         </a>
 
         <a href="./index.html">首页</a>
@@ -19,20 +19,38 @@
         <a href="./index.html#about">关于</a>
         <a href="./submit.html">上传</a>
         <a href="https://www.google.com/search?q=前端学习" target="_blank">
-            <img src="./imgs/search.png"/>
+            <img src="./imgs/search.png" />
         </a>
     </nav>
 
     <header>
-        <h1></h1>
+        <h1>记录眼中的美好</h1>
     </header>
 
-    <main></main>
+    <main>
+        <section>
+            <div>
+                <!-- <label for="upload">
+                    <img id="preview" src="./imgs/upload.png"/>
+                </label> -->
+                    <input id="upload" type="file" accept=".png,.jpg,.jpeg"/>
+                
+            </div>
+            <div>
+                <input id="name" placeholder="名称"/>
+                <input id="photographer" placeholder="拍摄者"/>
+                <textarea id="desc" placeholder="描述"></textarea>
+            </div>
+        </section>
+        <section>
+            <button>发布</button>
+        </section>
+    </main>
 
-    <footer>
-        <span>Cppyright @ 2021</span>
+    <footer style="background:#0D0D0D">
+        <span style="color:#fff">Copyright &copy; 2022 支付宝前锋营</span>
         <a href="https://xcloud.alipay.com" target="_blank">
-            <img src="./imgs/afx-logo.png"/>
+            <img src="./imgs/afx-logo.png" width="50"/>
         </a>
     </footer>
 </body>
