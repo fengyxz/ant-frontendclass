@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  </style>
+</head>
+
+<style>
+p {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.nav {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 16px;
+  width: 200px;
+}
+.nav-title {
+  color: #999;
+  font-size: 32px;
+  font-weight: bold;
+}
+.nav-list {
+  margin-top: 32px;
+}
+.nav-self {
+  display: block;
+  color: rgb(60, 133, 243);
+  text-decoration: none;
+}
+</style>
+
+<div class="container">
+  <div class="nav">
+    <p class="nav-title">书籍</p>
+    <ul class="nav-list">
+      <a class="nav-self" href="">《CSS权威指南》</a>
+      <a class="nav-self" href="">《Javascript权威指南》</a>
+      <a class="nav-self" href="">《深入浅出Node.js》</a>
+      <a class="nav-self" href="">《HTML5权威指南》</a>
+    </ul>
+  </div>
+
+  <div class="nav">
+    <p class="nav-title">资源</p>
+    <ul class="nav-list">
+      <a class="nav-self" href="">MDN</a>
+      <a class="nav-self" href="">掘金</a>
+      <a class="nav-self" href="">Stack Overflow</a>
+    </ul>
+  </div>
+
+  <div class="nav">
+    <p class="nav-title">进阶</p>
+    <ul class="nav-list">
+      <a class="nav-self" href="">Vue</a>
+      <a class="nav-self" href="">React</a>
+      <a class="nav-self" href="">小程序</a>
+      <a class="nav-self" href="">Ant Design</a>
+    </ul>
+  </div>
+</div>
+
+
+</html>

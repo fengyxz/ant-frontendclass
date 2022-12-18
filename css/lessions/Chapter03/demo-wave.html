@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        transform-style: preserve-3d;
+        perspective: 600;
+      }
+
+      .wave-container {
+        width: 350px;
+        margin: 30vh auto;
+        transform: rotateX(-20deg) rotateY(-30deg) translate3d(0, 0, 0);
+        transform-style: preserve-3d;
+      }
+
+      .block {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        float: left;
+        transform-style: preserve-3d;
+      }
+
+      .face {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        box-sizing: border-box;
+      }
+
+      .left {
+        transform-origin: 0% 50%;
+        animation: left 1s ease-in-out alternate infinite;
+        background: #373c94;
+      }
+
+      .right {
+        transform-origin: 100% 50%;
+        animation: right 1s ease-in-out alternate infinite;
+        background: #373c94;
+      }
+
+      .front {
+        animation: front 1s ease-in-out alternate infinite;
+        background: #5287a5;
+      }
+
+      .back {
+        transform: translateZ(-50px);
+        background: #5287a5;
+      }
+
+      .top {
+        transform-origin: 50% 0%;
+        animation: top 1s ease-in-out alternate infinite;
+        background: #81c8a8;
+      }
+
+      .bottom {
+        transform-origin: 50% 100%;
+        animation: bottom 1s ease-in-out alternate infinite;
+        background: #81c8a8;
+      }
+
+      @keyframes left {
+        0% {
+          width: 50px;
+          transform: rotateY(90deg) translateX(0);
+        }
+        100% {
+          width: 110px;
+          transform: rotateY(90deg) translateX(-60px);
+        }
+      }
+      @keyframes right {
+        0% {
+          width: 50px;
+          transform: rotateY(-90deg) translateZ(0) translateX(0);
+        }
+        100% {
+          width: 110px;
+          transform: rotateY(-90deg) translateZ(60px) translateX(60px);
+        }
+      }
+      @keyframes bottom {
+        0% {
+          height: 50px;
+          transform: rotateX(90deg) translateY(0);
+          top: 0;
+        }
+        100% {
+          height: 110px;
+          transform: rotateX(90deg) translateY(60px);
+          top: -60px;
+        }
+      }
+      @keyframes top {
+        0% {
+          height: 50px;
+          transform: rotateX(-90deg) translateY(0);
+        }
+        100% {
+          height: 110px;
+          transform: rotateX(-90deg) translateY(-60px);
+        }
+      }
+      @keyframes front {
+        0% {
+          transform: translateZ(0);
+        }
+        100% {
+          transform: translateZ(60px);
+        }
+      }
+      .block:nth-of-type(6n-5) > .face {
+        animation-delay: 0.1538461538s;
+      }
+
+      .block:nth-of-type(6n-4) > .face {
+        animation-delay: 0.3076923077s;
+      }
+
+      .block:nth-of-type(6n-3) > .face {
+        animation-delay: 0.4615384615s;
+      }
+
+      .block:nth-of-type(6n-2) > .face {
+        animation-delay: 0.6153846154s;
+      }
+
+      .block:nth-of-type(6n-1) > .face {
+        animation-delay: 0.7692307692s;
+      }
+
+      .block:nth-of-type(6n) > .face {
+        animation-delay: 0.9230769231s;
+      }
+
+      .block:nth-of-type(6n + 1) > .face {
+        animation-delay: 1.0769230769s;
+      }
+
+      .block:nth-of-type(6n + 8) > .face {
+        animation-delay: 1.2307692308s;
+      }
+
+      .block:nth-of-type(6n + 15) > .face {
+        animation-delay: 1.3846153846s;
+      }
+
+      .block:nth-of-type(6n + 22) > .face {
+        animation-delay: 1.5384615385s;
+      }
+
+      .block:nth-of-type(6n + 29) > .face {
+        animation-delay: 1.6923076923s;
+      }
+
+      .block:nth-of-type(6n + 36) > .face {
+        animation-delay: 1.8461538462s;
+      }
+
+      .block:nth-of-type(6n + 43) > .face {
+        animation-delay: 2s;
+      }
+
+      .block:nth-of-type(1) {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wave-container">
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+      <div class="block">
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+    </div>
+  </body>
+</html>

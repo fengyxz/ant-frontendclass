@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: gold;
+    display: flex;
+    justify-content: space-around;
+    /* 关键代码 */
+    align-items: stretch;
+  }
+  .children {
+    width: 200px;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    background: #1677ff;
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="children">box1</div>
+    <div class="children" style="height: 50px">box2</div>
+    <div class="children">box3</div>
+    <div class="children" style="height: 150px">box4</div>
+  </div>
+</body>
+</html>

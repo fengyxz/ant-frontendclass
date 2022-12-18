@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  </style>
+</head>
+
+<style>
+p {
+  margin: 0;
+}
+.box {
+  display: inline-block;
+  margin-right: 16px;
+  padding: 10px;
+  width: 200px;
+  height: 300px;
+  border: 2px solid #666;
+  border-radius: 8px;
+}
+.box-img {
+  width: 100%;
+  height: 120px;
+  cursor: pointer;
+  transition: transform 0.5s ease-out;
+}
+.box:hover .box-img {
+  transform: scale(1.2);
+}
+.box-title {
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.5s ease-out;
+}
+.box:hover .box-title {
+  transform: rotateZ(-90deg);
+}
+.box-description {
+  margin-top: 12px;
+  color: gray;
+  transition: transform 0.5s ease-out;
+}
+.box:hover .box-description {
+  transform: translateX(100%);
+}
+</style>
+
+<div class="box-list">
+  <div class="box">
+    <img class="box-img" src="../assets/pic-2.png" >
+    <p class="box-title">我是标题</p>
+    <p class="box-description">我是描述。。。我是描述。。。我是描述。。。</p>
+  </div>
+</div>
+
+
+</html>
