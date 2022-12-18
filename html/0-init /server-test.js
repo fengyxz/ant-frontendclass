@@ -7,7 +7,7 @@ const fs = require('fs');
 const mime = require('mime-types');
 
 // 端口号
-const port = 3000;
+const port = 3003;
 const server = http.createServer((req, res) => {
     let pathUrl = req.url;
     if (pathUrl === '/') pathUrl = 'index.html';
